@@ -65,9 +65,9 @@ public class Table extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnStartGame, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(106, 106, 106)
+                .addGap(172, 172, 172)
                 .addComponent(jLabel2)
-                .addGap(369, 369, 369))
+                .addGap(303, 303, 303))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(97, 97, 97)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -90,7 +90,7 @@ public class Table extends javax.swing.JFrame {
                         .addGap(58, 58, 58)
                         .addComponent(btnStartGame, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
+                        .addGap(50, 50, 50)
                         .addComponent(jLabel2)))
                 .addContainerGap(116, Short.MAX_VALUE))
         );
@@ -102,9 +102,82 @@ public class Table extends javax.swing.JFrame {
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
+        int x = evt.getX();
+        int y = evt.getY();
         
     }//GEN-LAST:event_jLabel1MouseClicked
 
+    private void betOdd(int x , int y){
+        int ax = 381;
+        int ay = 229;
+        int gx = 448;
+        int gy = 262;
+        System.out.println("Betting in Odds");
+    }
+    
+    private void betEven(int x , int y){
+        int ax = 176;
+        int ay = 230;
+        int gx = 241;
+        int gy = 260;
+        System.out.println("Betting in Evens");
+    }
+    private void betRed(int x , int y){
+        int ax = 243;
+        int ay = 230;
+        int gx = 309;
+        int gy = 261;
+        System.out.println("Bet on Red");
+    }
+    private void betBlack(int x , int y){
+        int ax = 313;
+        int ay = 230;
+        int gx = 378;
+        int gy = 261;
+        System.out.println("Bet on Black");
+    }
+    private void betOneTo18(int x , int y){
+        int ax = 105;
+        int ay = 230;
+        int gx = 172;
+        int gy = 261;
+        System.out.println("apuesta de 1 a 18");
+    }
+    private void bet19To36(int x , int y){
+        int ax = 451;
+        int ay = 230;
+        int gx = 516;
+        int gy = 261;
+        System.out.println("Betting from 19 to 34");
+    }
+    private void betFirstDozen(int x , int y){
+        int ax = 107;
+        int ay = 194;
+        int gx = 239;
+        int gy = 223;
+        System.out.println("First dozen be");
+    }
+    private void betScndDozen(int x , int y){
+        int ax = 244;
+        int ay = 194;
+        int gx = 378;
+        int gy = 223;
+        System.out.println("Second Dozen bet");
+    }
+    private void betTrdDozen(int x , int y){
+        int ax = 382;
+        int ay = 194;
+        int gx = 516;
+        int gy = 223;
+        System.out.println("apuesta a tercera docena");
+    }
+    private void betZero(){
+        int ax = 56;
+        int ay = 49;
+        int gx = 103;
+        int gy = 189;
+        System.out.println("apuesta a Cero");
+    }
     private void jLabel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseMoved
         // TODO add your handling code here:
         int x = evt.getX();
