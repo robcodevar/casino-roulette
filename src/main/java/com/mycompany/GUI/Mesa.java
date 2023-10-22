@@ -53,7 +53,6 @@ private DefaultTableModel table;
         tablePlayer = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         btnAddPlayer = new javax.swing.JButton();
-        btnStartGame1 = new javax.swing.JButton();
         lblCurrentPlayer = new javax.swing.JLabel();
         lblTimer = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -124,8 +123,9 @@ private DefaultTableModel table;
             }
         });
         tablePlayer.setColumnSelectionAllowed(true);
-        tablePlayer.setMaximumSize(new java.awt.Dimension(225, 100));
+        tablePlayer.setMaximumSize(new java.awt.Dimension(555, 111));
         tablePlayer.setMinimumSize(new java.awt.Dimension(225, 16));
+        tablePlayer.setPreferredSize(new java.awt.Dimension(555, 111));
         jScrollPane1.setViewportView(tablePlayer);
         tablePlayer.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         if (tablePlayer.getColumnModel().getColumnCount() > 0) {
@@ -143,13 +143,6 @@ private DefaultTableModel table;
         btnAddPlayer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAddPlayerMouseClicked(evt);
-            }
-        });
-
-        btnStartGame1.setText("SPIN ROULETTE");
-        btnStartGame1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnStartGame1ActionPerformed(evt);
             }
         });
 
@@ -188,11 +181,10 @@ private DefaultTableModel table;
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51))
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
@@ -200,11 +192,11 @@ private DefaultTableModel table;
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(lblTimer, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(48, 48, 48))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(btnAddPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btnStartGame1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(lblTimer, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
+                                        .addGap(18, 18, 18)))
                                 .addComponent(btnStartGame, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lblCurrentPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -254,9 +246,8 @@ private DefaultTableModel table;
                         .addGap(71, 71, 71)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnAddPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnStartGame1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnStartGame, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34))
         );
 
@@ -278,10 +269,6 @@ private DefaultTableModel table;
         int y = evt.getY();
         jLabel6.setText("x : "+x+" y: "+ y);
     }//GEN-LAST:event_jLabel1MouseMoved
-
-    private void btnStartGame1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartGame1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnStartGame1ActionPerformed
 
     private void btnStartGameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnStartGameMouseClicked
         // TODO add your handling code here:
@@ -320,7 +307,7 @@ private DefaultTableModel table;
     }//GEN-LAST:event_btnAddPlayerMouseClicked
     private void abrirFormularioRegistro() {
         JDialog registroDialog = new JDialog(this, "Registro de Jugador", true);
-        registroDialog.setSize(300, 150);
+        registroDialog.setSize(400, 150);
         registroDialog.setLayout(null);
 
         JLabel lblNombre = new JLabel("Nombre del Jugador:");
@@ -334,7 +321,7 @@ private DefaultTableModel table;
         txtCreditos.setBounds(170, 50, 100, 20);
         
         JButton btnRegistrar = new JButton("Registrar");
-        btnRegistrar.setBounds(120, 80, 80, 30);
+        btnRegistrar.setBounds(120, 80, 100, 30);
         btnRegistrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -403,7 +390,6 @@ private DefaultTableModel table;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddPlayer;
     private javax.swing.JButton btnStartGame;
-    private javax.swing.JButton btnStartGame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
