@@ -4,12 +4,16 @@
  */
 package com.mycompany.GUI;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
+
 /**
  *
  * @author bobvo
  */
 public class Table extends javax.swing.JFrame {
-
+private Timer timer;
     /**
      * Creates new form Table
      */
@@ -29,18 +33,25 @@ public class Table extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnStartGame = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         btnAddPlayer = new javax.swing.JButton();
+        btnStartGame1 = new javax.swing.JButton();
+        lblCurrentPlayer = new javax.swing.JLabel();
+        lblTimer = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(0, 51, 51));
         jPanel1.setToolTipText("");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tablero ruleta 02_1.jpg"))); // NOI18N
@@ -57,11 +68,20 @@ public class Table extends javax.swing.JFrame {
         });
 
         btnStartGame.setText("START GAME");
+        btnStartGame.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnStartGameMouseClicked(evt);
+            }
+        });
+        btnStartGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStartGameActionPerformed(evt);
+            }
+        });
 
-        jButton1.setText("START BET");
-
-        jLabel2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jLabel2.setText("jLabel2");
+        jLabel2.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("COLOR MAS FRECUENTE: ");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -99,62 +119,126 @@ public class Table extends javax.swing.JFrame {
         jTable1.getAccessibleContext().setAccessibleParent(jPanel1);
 
         jLabel3.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Jugadores Registrados");
 
         btnAddPlayer.setText("ADD PLAYER");
+
+        btnStartGame1.setText("SPIN ROULETTE");
+        btnStartGame1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStartGame1ActionPerformed(evt);
+            }
+        });
+
+        lblCurrentPlayer.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        lblCurrentPlayer.setForeground(new java.awt.Color(255, 255, 255));
+        lblCurrentPlayer.setText("JUGADOR : ");
+
+        lblTimer.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        lblTimer.setForeground(new java.awt.Color(255, 255, 255));
+        lblTimer.setText("Le quedan : 00(min):00(seg)");
+
+        jLabel4.setFont(new java.awt.Font("sansserif", 0, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("ESTADISTICAS");
+
+        jLabel5.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("NUMERO MAS FRECUENTE:");
+
+        jLabel6.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("jLabel2");
+
+        jLabel7.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("JUGADOR CON MAS GANANCIAS : ");
+
+        jLabel8.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("JUGADOR CON MAYORES PERDIDAS : ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(76, 76, 76)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(btnAddPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(btnAddPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnStartGame1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lblTimer, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(btnStartGame, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblCurrentPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(btnStartGame, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(17, 17, 17))))
+                                .addGap(72, 72, 72)
+                                .addComponent(jLabel4))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(125, 125, 125)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE))
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(670, Short.MAX_VALUE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(304, 304, 304)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnStartGame, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel8))
+                    .addComponent(jLabel1))
+                .addGap(45, 45, 45)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(lblCurrentPlayer))
+                .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAddPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)))
-                .addComponent(jLabel3)
-                .addGap(12, 12, 12))
+                        .addComponent(lblTimer)
+                        .addGap(71, 71, 71)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnAddPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnStartGame1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnStartGame, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(113, 113, 113)
+                    .addComponent(jLabel6)
+                    .addContainerGap(458, Short.MAX_VALUE)))
         );
 
         getContentPane().add(jPanel1);
@@ -166,69 +250,339 @@ public class Table extends javax.swing.JFrame {
         // TODO add your handling code here:
         int x = evt.getX();
         int y = evt.getY();
-        while (10>2){
             if(betOdd(x,y)){
-                break;
+                
             }else if(betEven(x, y)){
-                break;
+                
             }else if(betOneTo18(x, y)){
-                break;
+                
             }else if(bet19To36(x, y)){
-                break;
+                
             }else if(betBlack(x, y)){
-                break;
+                
             }else if(betRed(x, y)){
-                break;
+                
             }else if(betFirstDozen(x, y)){
-                break;
+                
             }else if(betScndDozen(x, y)){
-                break;
+                
             }else if(betTrdDozen(x, y)){
-                break;
+                
             }else if(betZero(x, y)){
-                break;
+                
             }else{
-                break;
+                
             }
-        }
         
     }//GEN-LAST:event_jLabel1MouseClicked
     
-    private boolean betFstRow(int x , int y){
-        int ax = 381;
-        int ay = 229;
-        int gx = 448;
-        int gy = 262;
+    private boolean betRedOne(int x , int y){
+        int ax = 106;
+        int ay = 145;
+        int gx = 137;
+        int gy = 189;
         boolean res = false;
         if(verifyBet(ax, ay, gx, gy, x, y)){
             res=true;
-            System.out.println("Betting in Odds");
+            System.out.println("Betting in Red one");
+        }
+        return res;
+    }
+    private boolean betRed3(int x , int y){
+        int ax = 106;
+        int ay = 48;
+        int gx = 137;
+        int gy = 91;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in Red 3");
+        }
+        return res;
+    }
+    private boolean betRedFive(int x , int y){
+        int ax = 141;
+        int ay = 96;
+        int gx = 172;
+        int gy = 140;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in red Five");
         }
         return res;
     }
     
-    private boolean betSndRow(int x , int y){
-        int ax = 381;
-        int ay = 229;
-        int gx = 448;
-        int gy = 262;
+    private boolean betRedSeven(int x , int y){
+        int ax = 175;
+        int ay = 145;
+        int gx = 205;
+        int gy = 188;
         boolean res = false;
         if(verifyBet(ax, ay, gx, gy, x, y)){
             res=true;
-            System.out.println("Betting in Odds");
+            System.out.println("Betting in Red seven");
+        }
+        return res;
+    }
+    
+    private boolean betRedNine(int x , int y){
+        int ax = 175;
+        int ay = 48;
+        int gx = 206;
+        int gy = 93;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in red nine");
+        }
+        return res;
+    }
+    
+    private boolean betRedTwelve(int x , int y){
+        int ax = 209;
+        int ay = 48;
+        int gx = 241;
+        int gy = 93;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in red Twelve");
+        }
+        return res;
+    }
+    
+    private boolean betRedFourteen(int x , int y){
+        int ax = 243;
+        int ay = 97;
+        int gx = 275;
+        int gy = 140;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in Red 14");
+        }
+        return res;
+    }
+    
+    private boolean betRed16(int x , int y){
+        int ax = 278;
+        int ay = 144;
+        int gx = 310;
+        int gy = 189;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in red 16");
+        }
+        return res;
+    }  
+    private boolean betRed18(int x , int y){
+        int ax = 280;
+        int ay = 48;
+        int gx = 309;
+        int gy = 91;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in red 18");
+        }
+        return res;
+    }
+    
+    private boolean betRed19(int x , int y){
+        int ax = 313;
+        int ay = 146;
+        int gx = 346;
+        int gy = 187;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in red 19");
+        }
+        return res;
+    }
+    
+    private boolean betRed21(int x , int y){
+        int ax = 312;
+        int ay = 48;
+        int gx = 345;
+        int gy = 92;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in red 21");
+        }
+        return res;
+    }
+    
+    private boolean betRed23(int x , int y){
+        int ax = 347;
+        int ay = 97;
+        int gx = 379;
+        int gy = 140;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in red 23");
+        }
+        return res;
+    }
+    
+    private boolean betRed25(int x , int y){
+        int ax = 381;
+        int ay = 146;
+        int gx = 413;
+        int gy = 188;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in red 25");
+        }
+        return res;
+    }
+    
+    private boolean betRed27(int x , int y){
+        int ax = 381;
+        int ay = 48;
+        int gx = 414;
+        int gy = 91;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in red 27");
+        }
+        return res;
+    }
+    
+    private boolean betRed30(int x , int y){
+        int ax = 416;
+        int ay = 48;
+        int gx = 447;
+        int gy = 92;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in red 30");
+        }
+        return res;
+    }
+    private boolean betRed32(int x , int y){
+        int ax = 450;
+        int ay = 97;
+        int gx = 483;
+        int gy = 141;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in red 32");
+        }
+        return res;
+    }
+    private boolean betRed34(int x , int y){
+        int ax = 485;
+        int ay = 145;
+        int gx = 517;
+        int gy = 187;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in red 34");
+        }
+        return res;
+    }
+    private boolean betRed36(int x , int y){
+        int ax = 485;
+        int ay = 48;
+        int gx = 516;
+        int gy = 92;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in red 36");
+        }
+        return res;
+    }
+    private boolean betBlack2(int x , int y){
+        int ax = 520;
+        int ay = 48;
+        int gx = 551;
+        int gy = 92;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in First Row");
+        }
+        return res;
+    }
+    private boolean betBlack4(int x , int y){
+        int ax = 520;
+        int ay = 48;
+        int gx = 551;
+        int gy = 92;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in First Row");
+        }
+        return res;
+    }private boolean betBlack6(int x , int y){
+        int ax = 520;
+        int ay = 48;
+        int gx = 551;
+        int gy = 92;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in First Row");
+        }
+        return res;
+    }private boolean betBlack8(int x , int y){
+        int ax = 520;
+        int ay = 48;
+        int gx = 551;
+        int gy = 92;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in First Row");
+        }
+        return res;
+    }
+    private boolean betFstRow(int x , int y){
+        int ax = 520;
+        int ay = 48;
+        int gx = 551;
+        int gy = 92;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in First Row");
+        }
+        return res;
+    }
+    private boolean betSndRow(int x , int y){
+        int ax = 520;
+        int ay = 97;
+        int gx = 551;
+        int gy = 142;
+        boolean res = false;
+        if(verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
+            System.out.println("Betting in Scnd Row");
         }
         return res;
     }
     
     private boolean betThrdRow(int x , int y){
-        int ax = 381;
-        int ay = 229;
-        int gx = 448;
-        int gy = 262;
+        int ax = 520;
+        int ay = 145;
+        int gx = 551;
+        int gy = 189;
         boolean res = false;
         if(verifyBet(ax, ay, gx, gy, x, y)){
             res=true;
-            System.out.println("Betting in Odds");
+            System.out.println("Betting in Third Row");
         }
         return res;
     }
@@ -375,8 +729,43 @@ public class Table extends javax.swing.JFrame {
         // TODO add your handling code here:
         int x = evt.getX();
         int y = evt.getY();
-        jLabel2.setText("x : "+x+" y: "+ y);
+        jLabel6.setText("x : "+x+" y: "+ y);
     }//GEN-LAST:event_jLabel1MouseMoved
+
+    private void btnStartGame1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartGame1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnStartGame1ActionPerformed
+
+    private void btnStartGameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnStartGameMouseClicked
+        // TODO add your handling code here:
+        
+        if(btnStartGame.getText()=="END GAME"){
+            btnStartGame.setText("START GAME");
+            timer.stop();
+            lblTimer.setText("Le quedan : 00(min):00(seg)");
+        }else{
+            btnStartGame.setText("END GAME");
+            timer = new Timer(1000, new ActionListener() {
+            int tiempoRestante = 80;
+            public void actionPerformed(ActionEvent e) {
+                tiempoRestante--;
+                if (tiempoRestante >= 0) {
+                    String tiempoFormateado = String.format("Le quedan: %02d(min):%02d(seg)",
+                            tiempoRestante / 60, tiempoRestante % 60);
+                    lblTimer.setText(tiempoFormateado);
+                } else {
+                    lblTimer.setText("Tiempo agotado");
+                }
+            }
+        });
+        timer.start();
+        }
+        
+    }//GEN-LAST:event_btnStartGameMouseClicked
+
+    private void btnStartGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartGameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnStartGameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -416,12 +805,19 @@ public class Table extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddPlayer;
     private javax.swing.JButton btnStartGame;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnStartGame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblCurrentPlayer;
+    private javax.swing.JLabel lblTimer;
     // End of variables declaration//GEN-END:variables
 }
