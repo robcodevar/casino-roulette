@@ -177,10 +177,12 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable1">
+            <Component class="javax.swing.JTable" name="tablePlayer">
               <Properties>
+                <Property name="autoCreateColumnsFromModel" type="boolean" value="false"/>
+                <Property name="autoCreateRowSorter" type="boolean" value="true"/>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="3" rowCount="3">
+                  <Table columnCount="3" rowCount="1">
                     <Column editable="false" title="Nombre" type="java.lang.String"/>
                     <Column editable="false" title="Creditos" type="java.lang.Integer"/>
                     <Column editable="false" title="Apuesta(s)" type="java.lang.Object"/>
@@ -206,6 +208,12 @@
                   </TableColumnModel>
                 </Property>
                 <Property name="columnSelectionAllowed" type="boolean" value="true"/>
+                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[225, 100]"/>
+                </Property>
+                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[225, 16]"/>
+                </Property>
                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
@@ -233,6 +241,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="ADD PLAYER"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnAddPlayerMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnStartGame1">
           <Properties>

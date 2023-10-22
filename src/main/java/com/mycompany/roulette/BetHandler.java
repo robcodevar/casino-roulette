@@ -504,10 +504,10 @@ public class BetHandler {
         return res;
     }
     private boolean betBlack35(int x , int y){
-        int ax = 520;
+        int ax = 485;
         int ay = 97;
-        int gx = 551;
-        int gy = 142;
+        int gx = 516;
+        int gy = 138;
         boolean res = false;
         if(verifyBet(ax, ay, gx, gy, x, y)){
             res=true;
@@ -592,11 +592,12 @@ public class BetHandler {
     }
     private boolean betBlack(int x , int y){
         int ax = 313;
-        int ay = 230;
+        int ay = 229;
         int gx = 378;
-        int gy = 261;
+        int gy = 259;
         boolean res = false;
         if (verifyBet(ax, ay, gx, gy, x, y)){
+            res=true;
             System.out.println("Bet on Black");
         }   
         return res;

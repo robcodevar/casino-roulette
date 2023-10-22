@@ -4,7 +4,7 @@
 
 package com.mycompany.roulette;
 
-import com.mycompany.GUI.Table;
+import com.mycompany.GUI.Mesa;
 
 /**
  *
@@ -14,7 +14,7 @@ public class Roulette {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
-        Table t = new Table();
+        Mesa t = new Mesa();
         t.setVisible(true);
     }
     

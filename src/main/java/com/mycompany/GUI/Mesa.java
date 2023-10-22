@@ -8,20 +8,30 @@ import com.mycompany.roulette.BetHandler;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Map;
+import javax.print.attribute.AttributeSet;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.Timer;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.text.AbstractDocument;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DocumentFilter;
 
 /**
  *
  * @author bobvo
  */
-public class Table extends javax.swing.JFrame {
+public class Mesa extends javax.swing.JFrame {
 private Timer timer;
 private BetHandler betHandler;
+private DefaultTableModel table;
     /**
      * Creates new form Table
      */
-    public Table() {
+    public Mesa() {
         initComponents();
         betHandler = new BetHandler();
     }
@@ -40,7 +50,7 @@ private BetHandler betHandler;
         btnStartGame = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablePlayer = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         btnAddPlayer = new javax.swing.JButton();
         btnStartGame1 = new javax.swing.JButton();
@@ -88,10 +98,10 @@ private BetHandler betHandler;
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("COLOR MAS FRECUENTE: ");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablePlayer.setAutoCreateColumnsFromModel(false);
+        tablePlayer.setAutoCreateRowSorter(true);
+        tablePlayer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
                 {null, null, null}
             },
             new String [] {
@@ -113,21 +123,28 @@ private BetHandler betHandler;
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setColumnSelectionAllowed(true);
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
+        tablePlayer.setColumnSelectionAllowed(true);
+        tablePlayer.setMaximumSize(new java.awt.Dimension(225, 100));
+        tablePlayer.setMinimumSize(new java.awt.Dimension(225, 16));
+        jScrollPane1.setViewportView(tablePlayer);
+        tablePlayer.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (tablePlayer.getColumnModel().getColumnCount() > 0) {
+            tablePlayer.getColumnModel().getColumn(0).setResizable(false);
+            tablePlayer.getColumnModel().getColumn(1).setResizable(false);
+            tablePlayer.getColumnModel().getColumn(2).setResizable(false);
         }
-        jTable1.getAccessibleContext().setAccessibleParent(jPanel1);
+        tablePlayer.getAccessibleContext().setAccessibleParent(jPanel1);
 
         jLabel3.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Jugadores Registrados");
 
         btnAddPlayer.setText("ADD PLAYER");
+        btnAddPlayer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAddPlayerMouseClicked(evt);
+            }
+        });
 
         btnStartGame1.setText("SPIN ROULETTE");
         btnStartGame1.addActionListener(new java.awt.event.ActionListener() {
@@ -297,6 +314,57 @@ private BetHandler betHandler;
         // TODO add your handling code here:
     }//GEN-LAST:event_btnStartGameActionPerformed
 
+    private void btnAddPlayerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddPlayerMouseClicked
+        // TODO add your handling code here:
+        abrirFormularioRegistro();
+    }//GEN-LAST:event_btnAddPlayerMouseClicked
+    private void abrirFormularioRegistro() {
+        JDialog registroDialog = new JDialog(this, "Registro de Jugador", true);
+        registroDialog.setSize(300, 150);
+        registroDialog.setLayout(null);
+
+        JLabel lblNombre = new JLabel("Nombre del Jugador:");
+        lblNombre.setBounds(20, 20, 150, 20);
+        JTextField txtNombre = new JTextField();
+        txtNombre.setBounds(170, 20, 100, 20);
+
+        JLabel lblCreditos = new JLabel("Créditos:");
+        lblCreditos.setBounds(20, 50, 150, 20);
+        JTextField txtCreditos = new JTextField();
+        txtCreditos.setBounds(170, 50, 100, 20);
+        
+        JButton btnRegistrar = new JButton("Registrar");
+        btnRegistrar.setBounds(120, 80, 80, 30);
+        btnRegistrar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Obtén el nombre y créditos ingresados por el jugador
+                String nombre = txtNombre.getText();
+                int creditos = Integer.parseInt(txtCreditos.getText());
+
+                // Crea un nuevo jugador y agrégalo a la lista de jugadores
+                //Jugador jugador = new Jugador(nombre, creditos);
+                //jugadores.add(jugador);
+                String aux = String.valueOf(creditos);
+                String [] datos = {nombre, aux , "Apuesta"};
+                // Agrega los datos del jugador al JTable
+                table = (DefaultTableModel)tablePlayer.getModel();
+                table.addRow(datos);
+                jPanel1.updateUI();
+
+                // Cierra el JDialog de registro
+                registroDialog.dispose();
+            }
+        });
+
+        registroDialog.add(lblNombre);
+        registroDialog.add(txtNombre);
+        registroDialog.add(lblCreditos);
+        registroDialog.add(txtCreditos);
+        registroDialog.add(btnRegistrar);
+
+        registroDialog.setVisible(true);
+    }
     /**
      * @param args the command line arguments
      */
@@ -314,20 +382,20 @@ private BetHandler betHandler;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Table.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Mesa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Table.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Mesa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Table.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Mesa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Table.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Mesa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Table().setVisible(true);
+                new Mesa().setVisible(true);
             }
         });
     }
@@ -346,8 +414,8 @@ private BetHandler betHandler;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblCurrentPlayer;
     private javax.swing.JLabel lblTimer;
+    private javax.swing.JTable tablePlayer;
     // End of variables declaration//GEN-END:variables
 }
