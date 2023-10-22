@@ -4,8 +4,11 @@
  */
 package com.mycompany.GUI;
 
+import com.mycompany.roulette.BetHandler;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Map;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 /**
@@ -14,11 +17,13 @@ import javax.swing.Timer;
  */
 public class Table extends javax.swing.JFrame {
 private Timer timer;
+private BetHandler betHandler;
     /**
      * Creates new form Table
      */
     public Table() {
         initComponents();
+        betHandler = new BetHandler();
     }
 
     /**
@@ -166,11 +171,14 @@ private Timer timer;
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(76, 76, 76)
+                        .addGap(25, 25, 25)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,30 +191,28 @@ private Timer timer;
                                 .addComponent(btnStartGame, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lblCurrentPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(78, 78, 78)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(131, 131, 131)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(72, 72, 72)
-                                .addComponent(jLabel4))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(125, 125, 125)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE))
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(670, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(304, 304, 304)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(45, 45, 45))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel4)
@@ -217,9 +223,10 @@ private Timer timer;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8))
-                    .addComponent(jLabel1))
-                .addGap(45, 45, 45)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel6)
+                        .addGap(59, 59, 59)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(lblCurrentPlayer))
@@ -234,11 +241,6 @@ private Timer timer;
                             .addComponent(btnStartGame, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(113, 113, 113)
-                    .addComponent(jLabel6)
-                    .addContainerGap(458, Short.MAX_VALUE)))
         );
 
         getContentPane().add(jPanel1);
@@ -250,480 +252,8 @@ private Timer timer;
         // TODO add your handling code here:
         int x = evt.getX();
         int y = evt.getY();
-            if(betOdd(x,y)){
-                
-            }else if(betEven(x, y)){
-                
-            }else if(betOneTo18(x, y)){
-                
-            }else if(bet19To36(x, y)){
-                
-            }else if(betBlack(x, y)){
-                
-            }else if(betRed(x, y)){
-                
-            }else if(betFirstDozen(x, y)){
-                
-            }else if(betScndDozen(x, y)){
-                
-            }else if(betTrdDozen(x, y)){
-                
-            }else if(betZero(x, y)){
-                
-            }else{
-                
-            }
-        
+        betHandler.clasificarApuesta(x, y);
     }//GEN-LAST:event_jLabel1MouseClicked
-    
-    private boolean betRedOne(int x , int y){
-        int ax = 106;
-        int ay = 145;
-        int gx = 137;
-        int gy = 189;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in Red one");
-        }
-        return res;
-    }
-    private boolean betRed3(int x , int y){
-        int ax = 106;
-        int ay = 48;
-        int gx = 137;
-        int gy = 91;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in Red 3");
-        }
-        return res;
-    }
-    private boolean betRedFive(int x , int y){
-        int ax = 141;
-        int ay = 96;
-        int gx = 172;
-        int gy = 140;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in red Five");
-        }
-        return res;
-    }
-    
-    private boolean betRedSeven(int x , int y){
-        int ax = 175;
-        int ay = 145;
-        int gx = 205;
-        int gy = 188;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in Red seven");
-        }
-        return res;
-    }
-    
-    private boolean betRedNine(int x , int y){
-        int ax = 175;
-        int ay = 48;
-        int gx = 206;
-        int gy = 93;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in red nine");
-        }
-        return res;
-    }
-    
-    private boolean betRedTwelve(int x , int y){
-        int ax = 209;
-        int ay = 48;
-        int gx = 241;
-        int gy = 93;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in red Twelve");
-        }
-        return res;
-    }
-    
-    private boolean betRedFourteen(int x , int y){
-        int ax = 243;
-        int ay = 97;
-        int gx = 275;
-        int gy = 140;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in Red 14");
-        }
-        return res;
-    }
-    
-    private boolean betRed16(int x , int y){
-        int ax = 278;
-        int ay = 144;
-        int gx = 310;
-        int gy = 189;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in red 16");
-        }
-        return res;
-    }  
-    private boolean betRed18(int x , int y){
-        int ax = 280;
-        int ay = 48;
-        int gx = 309;
-        int gy = 91;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in red 18");
-        }
-        return res;
-    }
-    
-    private boolean betRed19(int x , int y){
-        int ax = 313;
-        int ay = 146;
-        int gx = 346;
-        int gy = 187;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in red 19");
-        }
-        return res;
-    }
-    
-    private boolean betRed21(int x , int y){
-        int ax = 312;
-        int ay = 48;
-        int gx = 345;
-        int gy = 92;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in red 21");
-        }
-        return res;
-    }
-    
-    private boolean betRed23(int x , int y){
-        int ax = 347;
-        int ay = 97;
-        int gx = 379;
-        int gy = 140;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in red 23");
-        }
-        return res;
-    }
-    
-    private boolean betRed25(int x , int y){
-        int ax = 381;
-        int ay = 146;
-        int gx = 413;
-        int gy = 188;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in red 25");
-        }
-        return res;
-    }
-    
-    private boolean betRed27(int x , int y){
-        int ax = 381;
-        int ay = 48;
-        int gx = 414;
-        int gy = 91;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in red 27");
-        }
-        return res;
-    }
-    
-    private boolean betRed30(int x , int y){
-        int ax = 416;
-        int ay = 48;
-        int gx = 447;
-        int gy = 92;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in red 30");
-        }
-        return res;
-    }
-    private boolean betRed32(int x , int y){
-        int ax = 450;
-        int ay = 97;
-        int gx = 483;
-        int gy = 141;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in red 32");
-        }
-        return res;
-    }
-    private boolean betRed34(int x , int y){
-        int ax = 485;
-        int ay = 145;
-        int gx = 517;
-        int gy = 187;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in red 34");
-        }
-        return res;
-    }
-    private boolean betRed36(int x , int y){
-        int ax = 485;
-        int ay = 48;
-        int gx = 516;
-        int gy = 92;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in red 36");
-        }
-        return res;
-    }
-    private boolean betBlack2(int x , int y){
-        int ax = 520;
-        int ay = 48;
-        int gx = 551;
-        int gy = 92;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in First Row");
-        }
-        return res;
-    }
-    private boolean betBlack4(int x , int y){
-        int ax = 520;
-        int ay = 48;
-        int gx = 551;
-        int gy = 92;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in First Row");
-        }
-        return res;
-    }private boolean betBlack6(int x , int y){
-        int ax = 520;
-        int ay = 48;
-        int gx = 551;
-        int gy = 92;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in First Row");
-        }
-        return res;
-    }private boolean betBlack8(int x , int y){
-        int ax = 520;
-        int ay = 48;
-        int gx = 551;
-        int gy = 92;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in First Row");
-        }
-        return res;
-    }
-    private boolean betFstRow(int x , int y){
-        int ax = 520;
-        int ay = 48;
-        int gx = 551;
-        int gy = 92;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in First Row");
-        }
-        return res;
-    }
-    private boolean betSndRow(int x , int y){
-        int ax = 520;
-        int ay = 97;
-        int gx = 551;
-        int gy = 142;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in Scnd Row");
-        }
-        return res;
-    }
-    
-    private boolean betThrdRow(int x , int y){
-        int ax = 520;
-        int ay = 145;
-        int gx = 551;
-        int gy = 189;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in Third Row");
-        }
-        return res;
-    }
-    
-    private boolean betOdd(int x , int y){
-        int ax = 381;
-        int ay = 229;
-        int gx = 448;
-        int gy = 262;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in Odds");
-        }
-        return res;
-    }
-    
-    private boolean betEven(int x , int y){
-        int ax = 176;
-        int ay = 230;
-        int gx = 241;
-        int gy = 260;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting in Evens");
-        }
-        return res;
-    }
-    private boolean betRed(int x , int y){
-        int ax = 243;
-        int ay = 230;
-        int gx = 309;
-        int gy = 261;
-        boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Bet on Red");
-        }
-        return res;
-    }
-    private boolean betBlack(int x , int y){
-        int ax = 313;
-        int ay = 230;
-        int gx = 378;
-        int gy = 261;
-        boolean res = false;
-        if (verifyBet(ax, ay, gx, gy, x, y)){
-            System.out.println("Bet on Black");
-        }   
-        return res;
-    }
-    
-    private boolean betOneTo18(int x , int y){
-        int ax = 105;
-        int ay = 230;
-        int gx = 172;
-        int gy = 261;
-        boolean res = false;
-        if (verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("apuesta de 1 a 18");
-        }   
-        return res;
-    }
-    
-    private boolean bet19To36(int x , int y){
-        int ax = 451;
-        int ay = 230;
-        int gx = 516;
-        int gy = 261;
-        boolean res = false;
-        if (verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Betting from 19 to 36");
-        }   
-        return res;
-    }
-    private boolean betFirstDozen(int x , int y){
-        int ax = 107;
-        int ay = 194;
-        int gx = 239;
-        int gy = 223;
-        boolean res = false;
-        if (verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("First dozen be");
-        }   
-        return res;
-    }
-    
-    private boolean betScndDozen(int x , int y){
-        int ax = 244;
-        int ay = 194;
-        int gx = 378;
-        int gy = 223;
-        boolean res = false;
-        if (verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Second Dozen bet");
-        }
-        return res;
-    }
-    
-    private boolean betTrdDozen(int x , int y){
-        int ax = 382;
-        int ay = 194;
-        int gx = 516;
-        int gy = 223;
-        boolean res = false;
-        if (verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("Third Dozen bet");
-        }  
-        return res;
-    }
-    
-    private boolean betZero(int x , int y){
-        int ax = 56;
-        int ay = 49;
-        int gx = 103;
-        int gy = 189;
-        boolean res = false;
-        if (verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
-            System.out.println("apuesta a Cero");
-        }
-        return res;
-    }
-    
-    private boolean verifyBet(int xMin , int yMin , int xMax , int yMax , int xr , int yr){
-        boolean res = false;
-        // Se analiza si el valor real de x , esta entre los parametros de X
-        if(xr >= xMin  && xr <= xMax){
-            // Se analiza si el valor real de y , esta entre los parametros de Y
-            if(yr >= yMin && yr <= yMax){
-                res = true;
-            }
-        }
-        return res;
-    }
     
     private void jLabel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseMoved
         // TODO add your handling code here:

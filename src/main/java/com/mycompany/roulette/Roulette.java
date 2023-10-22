@@ -17,4 +17,5 @@ public class Roulette {
         Table t = new Table();
         t.setVisible(true);
     }
+    
 }
