@@ -20,9 +20,11 @@ com\mycompany\GUI\Mesa$6.class
 com\mycompany\roulette\Table.class
 com\mycompany\roulette\Main.class
 com\mycompany\GUI\Mesa$5.class
+com\mycompany\roulette\MiddleBet.class
 com\mycompany\roulette\OddBet.class
 com\mycompany\roulette\DozenBet.class
 com\mycompany\roulette\Random.class
 com\mycompany\roulette\ColorsBet.class
 com\mycompany\roulette\TriFunction.class
+com\mycompany\GUI\Mesa$10.class
 com\mycompany\roulette\BetHandler.class

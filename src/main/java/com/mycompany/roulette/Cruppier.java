@@ -23,7 +23,7 @@ public class Cruppier {
     }
 
     public String getRules() {
-        String rules = "Reglas de la Ruleta Europea con Números:\n\n" +
+        String rules = "Reglas de la Ruleta Europea:\n\n" +
                 "La ruleta europea es un juego de azar que consta de los números del 0 al 36.\n" +
                 "Las reglas básicas son las siguientes:\n\n" +
                 "1. Los jugadores pueden realizar apuestas en números individuales o en grupos de números.\n" +
