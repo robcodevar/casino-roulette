@@ -68,10 +68,11 @@ public class Table {
 
     public Player endGameTurn() {
         currentTurn += 1;
+
         if (currentTurn < players.size()) {
             return players.get(currentTurn);
         } else {
-            currentTurn = 0;
+            currentTurn = -1;
             return null;
         }
 
