@@ -17,8 +17,8 @@ import javax.swing.JOptionPane;
 
 public class BetHandler {
     private Map<String, TriFunction<Integer, Integer, Boolean>> apuestas = new HashMap<>();
-    
-    public BetHandler(){
+
+    public BetHandler() {
         // Inicializa el mapa de funciones de apuestas
         apuestas.put("betOdd", this::betOdd);
         apuestas.put("betEven", this::betEven);
@@ -70,620 +70,650 @@ public class BetHandler {
         apuestas.put("betBlack33", this::betBlack33);
         apuestas.put("betBlack35", this::betBlack35);
     }
-    
-    private boolean betRedOne(int x , int y){
+
+    private boolean betRedOne(int x, int y) {
         int ax = 106;
         int ay = 145;
         int gx = 137;
         int gy = 189;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Red one");
         }
         return res;
     }
-    private boolean betRed3(int x , int y){
+
+    private boolean betRed3(int x, int y) {
         int ax = 106;
         int ay = 48;
         int gx = 137;
         int gy = 91;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Red 3");
         }
         return res;
     }
-    private boolean betRedFive(int x , int y){
+
+    private boolean betRedFive(int x, int y) {
         int ax = 141;
         int ay = 96;
         int gx = 172;
         int gy = 140;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in red Five");
         }
         return res;
     }
-    
-    private boolean betRedSeven(int x , int y){
+
+    private boolean betRedSeven(int x, int y) {
         int ax = 175;
         int ay = 145;
         int gx = 205;
         int gy = 188;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Red seven");
         }
         return res;
     }
-    
-    private boolean betRedNine(int x , int y){
+
+    private boolean betRedNine(int x, int y) {
         int ax = 175;
         int ay = 48;
         int gx = 206;
         int gy = 93;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in red nine");
         }
         return res;
     }
-    
-    private boolean betRedTwelve(int x , int y){
+
+    private boolean betRedTwelve(int x, int y) {
         int ax = 209;
         int ay = 48;
         int gx = 241;
         int gy = 93;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in red Twelve");
         }
         return res;
     }
-    
-    private boolean betRedFourteen(int x , int y){
+
+    private boolean betRedFourteen(int x, int y) {
         int ax = 243;
         int ay = 97;
         int gx = 275;
         int gy = 140;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Red 14");
         }
         return res;
     }
-    
-    private boolean betRed16(int x , int y){
+
+    private boolean betRed16(int x, int y) {
         int ax = 278;
         int ay = 144;
         int gx = 310;
         int gy = 189;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in red 16");
         }
         return res;
-    }  
-    private boolean betRed18(int x , int y){
+    }
+
+    private boolean betRed18(int x, int y) {
         int ax = 280;
         int ay = 48;
         int gx = 309;
         int gy = 91;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in red 18");
         }
         return res;
     }
-    
-    private boolean betRed19(int x , int y){
+
+    private boolean betRed19(int x, int y) {
         int ax = 313;
         int ay = 146;
         int gx = 346;
         int gy = 187;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in red 19");
         }
         return res;
     }
-    
-    private boolean betRed21(int x , int y){
+
+    private boolean betRed21(int x, int y) {
         int ax = 312;
         int ay = 48;
         int gx = 345;
         int gy = 92;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in red 21");
         }
         return res;
     }
-    
-    private boolean betRed23(int x , int y){
+
+    private boolean betRed23(int x, int y) {
         int ax = 347;
         int ay = 97;
         int gx = 379;
         int gy = 140;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in red 23");
         }
         return res;
     }
-    
-    private boolean betRed25(int x , int y){
+
+    private boolean betRed25(int x, int y) {
         int ax = 381;
         int ay = 146;
         int gx = 413;
         int gy = 188;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in red 25");
         }
         return res;
     }
-    
-    private boolean betRed27(int x , int y){
+
+    private boolean betRed27(int x, int y) {
         int ax = 381;
         int ay = 48;
         int gx = 414;
         int gy = 91;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in red 27");
         }
         return res;
     }
-    
-    private boolean betRed30(int x , int y){
+
+    private boolean betRed30(int x, int y) {
         int ax = 416;
         int ay = 48;
         int gx = 447;
         int gy = 92;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in red 30");
         }
         return res;
     }
-    private boolean betRed32(int x , int y){
+
+    private boolean betRed32(int x, int y) {
         int ax = 450;
         int ay = 97;
         int gx = 483;
         int gy = 141;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in red 32");
         }
         return res;
     }
-    private boolean betRed34(int x , int y){
+
+    private boolean betRed34(int x, int y) {
         int ax = 485;
         int ay = 145;
         int gx = 517;
         int gy = 187;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in red 34");
         }
         return res;
     }
-    private boolean betRed36(int x , int y){
+
+    private boolean betRed36(int x, int y) {
         int ax = 485;
         int ay = 48;
         int gx = 516;
         int gy = 92;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in red 36");
         }
         return res;
     }
-    private boolean betBlack2(int x , int y){
+
+    private boolean betBlack2(int x, int y) {
         int ax = 107;
         int ay = 97;
         int gx = 138;
         int gy = 142;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Black 2");
         }
         return res;
     }
-    private boolean betBlack4(int x , int y){
+
+    private boolean betBlack4(int x, int y) {
         int ax = 141;
         int ay = 145;
         int gx = 172;
         int gy = 189;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Black 4");
         }
         return res;
     }
-    private boolean betBlack6(int x , int y){
+
+    private boolean betBlack6(int x, int y) {
         int ax = 141;
         int ay = 49;
         int gx = 172;
         int gy = 93;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Black 6");
         }
         return res;
     }
-    private boolean betBlack8(int x , int y){
+
+    private boolean betBlack8(int x, int y) {
         int ax = 175;
         int ay = 97;
         int gx = 207;
         int gy = 142;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Black 8");
         }
         return res;
     }
-    private boolean betBlack10(int x , int y){
+
+    private boolean betBlack10(int x, int y) {
         int ax = 209;
         int ay = 145;
         int gx = 242;
         int gy = 189;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Black 10");
         }
         return res;
     }
-    private boolean betBlack11(int x , int y){
+
+    private boolean betBlack11(int x, int y) {
         int ax = 211;
         int ay = 97;
         int gx = 241;
         int gy = 142;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Black 11");
         }
         return res;
     }
-    private boolean betBlack13(int x , int y){
+
+    private boolean betBlack13(int x, int y) {
         int ax = 244;
         int ay = 145;
         int gx = 275;
         int gy = 189;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Black 13");
         }
         return res;
     }
-    private boolean betBlack15(int x , int y){
+
+    private boolean betBlack15(int x, int y) {
         int ax = 244;
         int ay = 97;
         int gx = 276;
         int gy = 92;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Black 15");
         }
         return res;
     }
-    private boolean betBlack17(int x , int y){
+
+    private boolean betBlack17(int x, int y) {
         int ax = 279;
         int ay = 97;
         int gx = 310;
         int gy = 142;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Black 17");
         }
         return res;
     }
-    private boolean betBlack20(int x , int y){
+
+    private boolean betBlack20(int x, int y) {
         int ax = 313;
         int ay = 97;
         int gx = 346;
         int gy = 142;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Black 20");
         }
         return res;
     }
-    private boolean betBlack22(int x , int y){
+
+    private boolean betBlack22(int x, int y) {
         int ax = 348;
         int ay = 145;
         int gx = 380;
         int gy = 189;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Black 22");
         }
         return res;
     }
-    private boolean betBlack24(int x , int y){
+
+    private boolean betBlack24(int x, int y) {
         int ax = 350;
         int ay = 97;
         int gx = 379;
         int gy = 92;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Black 24");
         }
         return res;
     }
-    private boolean betBlack26(int x , int y){
+
+    private boolean betBlack26(int x, int y) {
         int ax = 382;
         int ay = 97;
         int gx = 415;
         int gy = 142;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Black 26");
         }
         return res;
     }
-    private boolean betBlack28(int x , int y){
+
+    private boolean betBlack28(int x, int y) {
         int ax = 416;
         int ay = 145;
         int gx = 448;
         int gy = 189;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Black 28");
         }
         return res;
     }
-    private boolean betBlack29(int x , int y){
+
+    private boolean betBlack29(int x, int y) {
         int ax = 416;
         int ay = 97;
         int gx = 448;
         int gy = 142;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Black 29");
         }
         return res;
     }
-    private boolean betBlack31(int x , int y){
+
+    private boolean betBlack31(int x, int y) {
         int ax = 451;
         int ay = 145;
         int gx = 483;
         int gy = 189;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Black 31");
         }
         return res;
     }
-    
-    private boolean betBlack33(int x , int y){
+
+    private boolean betBlack33(int x, int y) {
         int ax = 450;
         int ay = 49;
         int gx = 482;
         int gy = 92;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Black 33");
         }
         return res;
     }
-    private boolean betBlack35(int x , int y){
+
+    private boolean betBlack35(int x, int y) {
         int ax = 485;
         int ay = 97;
         int gx = 516;
         int gy = 138;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Black 35");
         }
         return res;
     }
-    private boolean betFstRow(int x , int y){
+
+    private boolean betFstRow(int x, int y) {
         int ax = 520;
         int ay = 48;
         int gx = 551;
         int gy = 92;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in First Row");
         }
         return res;
     }
-    private boolean betSndRow(int x , int y){
+
+    private boolean betSndRow(int x, int y) {
         int ax = 520;
         int ay = 97;
         int gx = 551;
         int gy = 142;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Scnd Row");
         }
         return res;
     }
-    
-    private boolean betThrdRow(int x , int y){
+
+    private boolean betThrdRow(int x, int y) {
         int ax = 520;
         int ay = 145;
         int gx = 551;
         int gy = 189;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Third Row");
         }
         return res;
     }
-    
-    private boolean betOdd(int x , int y){
+
+    private boolean betOdd(int x, int y) {
         int ax = 381;
         int ay = 229;
         int gx = 448;
         int gy = 262;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Odds");
         }
         return res;
     }
-    
-    private boolean betEven(int x , int y){
+
+    private boolean betEven(int x, int y) {
         int ax = 176;
         int ay = 230;
         int gx = 241;
         int gy = 260;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting in Evens");
         }
         return res;
     }
-    private boolean betRed(int x , int y){
+
+    private boolean betRed(int x, int y) {
         int ax = 243;
         int ay = 230;
         int gx = 309;
         int gy = 261;
         boolean res = false;
-        if(verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Bet on Red");
         }
         return res;
     }
-    private boolean betBlack(int x , int y){
+
+    private boolean betBlack(int x, int y) {
         int ax = 313;
         int ay = 229;
         int gx = 378;
         int gy = 259;
         boolean res = false;
-        if (verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Bet on Black");
-        }   
+        }
         return res;
     }
-    
-    private boolean betOneTo18(int x , int y){
+
+    private boolean betOneTo18(int x, int y) {
         int ax = 105;
         int ay = 230;
         int gx = 172;
         int gy = 261;
         boolean res = false;
-        if (verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("apuesta de 1 a 18");
-        }   
+        }
         return res;
     }
-    private boolean bet19To36(int x , int y){
+
+    private boolean bet19To36(int x, int y) {
         int ax = 451;
         int ay = 230;
         int gx = 516;
         int gy = 261;
         boolean res = false;
-        if (verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Betting from 19 to 36");
-        }   
+        }
         return res;
     }
-    private boolean betFirstDozen(int x , int y){
+
+    private boolean betFirstDozen(int x, int y) {
         int ax = 107;
         int ay = 194;
         int gx = 239;
         int gy = 223;
         boolean res = false;
-        if (verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("First dozen be");
-        }   
+        }
         return res;
     }
-    
-    private boolean betScndDozen(int x , int y){
+
+    private boolean betScndDozen(int x, int y) {
         int ax = 244;
         int ay = 194;
         int gx = 378;
         int gy = 223;
         boolean res = false;
-        if (verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Second Dozen bet");
         }
         return res;
     }
-    
-    private boolean betTrdDozen(int x , int y){
+
+    private boolean betTrdDozen(int x, int y) {
         int ax = 382;
         int ay = 194;
         int gx = 516;
         int gy = 223;
         boolean res = false;
-        if (verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("Third Dozen bet");
-        }  
+        }
         return res;
     }
-    private boolean betZero(int x , int y){
+
+    private boolean betZero(int x, int y) {
         int ax = 56;
         int ay = 49;
         int gx = 103;
         int gy = 189;
         boolean res = false;
-        if (verifyBet(ax, ay, gx, gy, x, y)){
-            res=true;
+        if (verifyBet(ax, ay, gx, gy, x, y)) {
+            res = true;
             System.out.println("apuesta a Cero");
         }
         return res;
     }
-    
-    private boolean verifyBet(int xMin , int yMin , int xMax , int yMax , int xr , int yr){
+
+    private boolean verifyBet(int xMin, int yMin, int xMax, int yMax, int xr, int yr) {
         boolean res = false;
         // Se analiza si el valor real de x , esta entre los parametros de X
-        if(xr >= xMin  && xr <= xMax){
+        if (xr >= xMin && xr <= xMax) {
             // Se analiza si el valor real de y , esta entre los parametros de Y
-            if(yr >= yMin && yr <= yMax){
+            if (yr >= yMin && yr <= yMax) {
                 res = true;
             }
         }
@@ -693,34 +723,194 @@ public class BetHandler {
     public Map<String, TriFunction<Integer, Integer, Boolean>> getApuestas() {
         return apuestas;
     }
-    
-    public void clasificarApuesta(int x, int y) {
-        for (Map.Entry<String, TriFunction<Integer, Integer, Boolean>> entry : apuestas.entrySet()) {
-                String nombreApuesta = entry.getKey();
-                TriFunction<Integer, Integer, Boolean> funcionApuesta = entry.getValue();
 
-                if (funcionApuesta.apply(x, y)) {
-                    // Se ha seleccionado esta apuesta
-                    String mensaje = "Has seleccionado la apuesta: " + nombreApuesta;
-                    String cantidadApostada = JOptionPane.showInputDialog(null, mensaje + 
+    public void clasificarApuesta(int x, int y, Player currentPlayer) {
+
+        for (Map.Entry<String, TriFunction<Integer, Integer, Boolean>> entry : apuestas.entrySet()) {
+            String nombreApuesta = entry.getKey();
+            TriFunction<Integer, Integer, Boolean> funcionApuesta = entry.getValue();
+
+            if (funcionApuesta.apply(x, y)) {
+                // Se ha seleccionado esta apuesta
+                String mensaje = "Has seleccionado la apuesta: " + nombreApuesta;
+
+                String cantidadApostada = JOptionPane.showInputDialog(null, mensaje +
                         "\nIngrese la cantidad a apostar:");
-                    if (cantidadApostada != null && !cantidadApostada.isEmpty()) {
-                        int montoApostado = Integer.parseInt(cantidadApostada);
-                        // Realiza la lógica de la apuesta y muestra el resultado
-                        String resultado = realizarApuesta(nombreApuesta, montoApostado) ? "Ganaste" : "Perdiste";
-                        JOptionPane.showMessageDialog(null, "Resultado de la apuesta: " + resultado);
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Ingrese una cantidad válida.", "Error", JOptionPane.ERROR_MESSAGE);
-                    }
-                    break; // Sal del bucle una vez que se encuentra una apuesta seleccionada
-                }else{
-                    System.out.println("Apuesta desconocida");// Si no se encuentra ninguna apuesta
+                if (cantidadApostada != null && !cantidadApostada.isEmpty()) {
+                    float montoApostado = Float.parseFloat(cantidadApostada);
+
+                    createPlayerBet(nombreApuesta, montoApostado, currentPlayer);
+
+                    // Realiza la lógica de la apuesta y muestra el resultado
+
+                    // TODO: Implementar resultado de Ruleta
+                    // JOptionPane.showMessageDialog(null, "Resultado de la apuesta: " + resultado);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Ingrese una cantidad válida.", "Error",
+                            JOptionPane.ERROR_MESSAGE);
                 }
+                break; // Sal del bucle una vez que se encuentra una apuesta seleccionada
+            } else {
+                System.out.println("Apuesta desconocida");// Si no se encuentra ninguna apuesta
+            }
+        }
+
+    }
+
+    private void createPlayerBet(String type, float credits, Player player) {
+        switch (type) {
+            case "betOdd":
+                player.createOddBet(credits);
+                break;
+            case "betEven":
+                player.createEvenBet(credits);
+                break;
+            case "betOneTo18":
+                // TODO: Implementar
+                break;
+            case "bet19To36":
+                // TODO: Implementar
+                break;
+            case "betBlack":
+                player.createColorBet(ColorsBet.BLACK, credits);
+                break;
+            case "betRed":
+                player.createColorBet(ColorsBet.RED, credits);
+                break;
+            case "betFirstDozen":
+                player.createDozenBet(1, credits);
+                break;
+            case "betScndDozen":
+                player.createDozenBet(2, credits);
+                break;
+            case "betTrdDozen":
+                player.createDozenBet(3, credits);
+                break;
+            case "betFstRow":
+                player.createRowBet(1, credits);
+                break;
+            case "betSndRow":
+                player.createRowBet(2, credits);
+                break;
+            case "betThrdRow":
+                player.createRowBet(0, credits);
+                break;
+            case "betZero":
+                player.createSingleNumberBet(0, credits);
+                break;
+            case "betRedOne":
+                player.createSingleNumberBet(1, credits);
+                break;
+            case "betRed3":
+                player.createSingleNumberBet(3, credits);
+                break;
+            case "betRedFive":
+                player.createSingleNumberBet(5, credits);
+                break;
+            case "betRedSeven":
+                player.createSingleNumberBet(7, credits);
+                break;
+            case "betRedNine":
+                player.createSingleNumberBet(9, credits);
+                break;
+            case "betRedTwelve":
+                player.createSingleNumberBet(12, credits);
+                break;
+            case "betRedFourteen":
+                player.createSingleNumberBet(14, credits);
+                break;
+            case "betRed16":
+                player.createSingleNumberBet(16, credits);
+                break;
+            case "betRed18":
+                player.createSingleNumberBet(18, credits);
+                break;
+            case "betRed19":
+                player.createSingleNumberBet(19, credits);
+                break;
+            case "betRed21":
+                player.createSingleNumberBet(21, credits);
+                break;
+            case "betRed23":
+                player.createSingleNumberBet(23, credits);
+                break;
+            case "betRed25":
+                player.createSingleNumberBet(25, credits);
+                break;
+            case "betRed27":
+                player.createSingleNumberBet(27, credits);
+                break;
+            case "betRed30":
+                player.createSingleNumberBet(30, credits);
+                break;
+            case "betRed32":
+                player.createSingleNumberBet(32, credits);
+                break;
+            case "betRed34":
+                player.createSingleNumberBet(34, credits);
+                break;
+            case "betRed36":
+                player.createSingleNumberBet(36, credits);
+                break;
+            case "betBlack2":
+                player.createSingleNumberBet(2, credits);
+                break;
+            case "betBlack4":
+                player.createSingleNumberBet(4, credits);
+                break;
+            case "betBlack6":
+                player.createSingleNumberBet(6, credits);
+                break;
+            case "betBlack8":
+                player.createSingleNumberBet(8, credits);
+                break;
+            case "betBlack10":
+                player.createSingleNumberBet(10, credits);
+                break;
+            case "betBlack11":
+                player.createSingleNumberBet(11, credits);
+                break;
+            case "betBlack13":
+                player.createSingleNumberBet(13, credits);
+                break;
+            case "betBlack15":
+                player.createSingleNumberBet(15, credits);
+                break;
+            case "betBlack17":
+                player.createSingleNumberBet(17, credits);
+                break;
+            case "betBlack20":
+                player.createSingleNumberBet(20, credits);
+                break;
+            case "betBlack22":
+                player.createSingleNumberBet(22, credits);
+                break;
+            case "betBlack24":
+                player.createSingleNumberBet(24, credits);
+                break;
+            case "betBlack26":
+                player.createSingleNumberBet(26, credits);
+                break;
+            case "betBlack28":
+                player.createSingleNumberBet(28, credits);
+                break;
+            case "betBlack29":
+                player.createSingleNumberBet(29, credits);
+                break;
+            case "betBlack31":
+                player.createSingleNumberBet(31, credits);
+                break;
+            case "betBlack33":
+                player.createSingleNumberBet(33, credits);
+                break;
+            case "betBlack35":
+                player.createSingleNumberBet(35, credits);
+                break;
         }
     }
 
-    public boolean realizarApuesta(String nom , int monto){
-     return true;
+    public boolean realizarApuesta(String nom, int monto) {
+        return true;
     }
 
 }

@@ -6,7 +6,6 @@ package com.mycompany.roulette;
 
 import java.util.ArrayList;
 
-
 /**
  * Write a description of class Table here.
  *
@@ -17,11 +16,13 @@ public class Table {
     public ArrayList<Player> players;
     public Cruppier cruppier;
     private Roulette roulette;
+    private int currentTurn;
 
     public Table() {
         players = new ArrayList<Player>();
         cruppier = new Cruppier();
         roulette = new Roulette();
+        currentTurn = -1;
     }
 
     public void addPlayer(String name, float credits) {
@@ -50,8 +51,15 @@ public class Table {
         cruppier.payBets(players);
     }
 
-    public void endGameTurn() {
-        // TODO: implement this method
+    public Player endGameTurn() {
+        currentTurn += 1;
+        if (currentTurn < players.size()) {
+            return players.get(currentTurn);
+        } else {
+            currentTurn = 0;
+            return null;
+        }
+
     }
 
     public String getStadistics() {
@@ -61,5 +69,9 @@ public class Table {
 
     public void addRoundBets(ArrayList<Bet> bets) {
         // TODO: implement this method
+    }
+
+    public int getCurrentTurn() {
+        return currentTurn;
     }
 }
