@@ -39,60 +39,38 @@ public class Player {
         return "Player: " + name + " - Credits: " + credits;
     }
 
-    public ColorBet createColorBet(ColorsBet color, float credits) {
-        ColorBet newBet = new ColorBet(credits, this, color);
+    public Bet createBet(Bet newBet) {
         this.currentBet = newBet;
-        removeCredits(credits);
-
+        removeCredits(newBet.credits);
         return newBet;
+    }
+
+    public ColorBet createColorBet(ColorsBet color, float credits) {
+        return (ColorBet) createBet(new ColorBet(credits, this, color));
     }
 
     public EvenBet createEvenBet(float credits) {
-        EvenBet newBet = new EvenBet(credits, this);
-        this.currentBet = newBet;
-        removeCredits(credits);
-
-        return newBet;
+        return (EvenBet) createBet(new EvenBet(credits, this));
     }
 
     public OddBet createOddBet(float credits) {
-        OddBet newBet = new OddBet(credits, this);
-        this.currentBet = newBet;
-        removeCredits(credits);
-
-        return newBet;
+        return (OddBet) createBet(new OddBet(credits, this));
     }
 
     public RowBet createRowBet(int row, float credits) {
-        RowBet newBet = new RowBet(credits, this, row);
-        this.currentBet = newBet;
-        removeCredits(credits);
-
-        return newBet;
+        return (RowBet) createBet(new RowBet(credits, this, row));
     }
 
     public DozenBet createDozenBet(int dozenNumber, float credits) {
-        DozenBet newBet = new DozenBet(credits, this, dozenNumber);
-        this.currentBet = newBet;
-        removeCredits(credits);
-
-        return newBet;
+        return (DozenBet) createBet(new DozenBet(credits, this, dozenNumber));
     }
 
     public SingleNumberBet createSingleNumberBet(int numberBet, float credits) {
-        SingleNumberBet newBet = new SingleNumberBet(credits, this, numberBet);
-        this.currentBet = newBet;
-        removeCredits(credits);
-
-        return newBet;
+        return (SingleNumberBet) createBet(new SingleNumberBet(credits, this, numberBet));
     }
 
     public MiddleBet createMiddleBet(int middleNumber, float credits) {
-        MiddleBet newBet = new MiddleBet(credits, this, middleNumber);
-        this.currentBet = newBet;
-        removeCredits(credits);
-
-        return newBet;
+        return (MiddleBet) createBet(new MiddleBet(credits, this, middleNumber));
     }
 
     public Bet getCurrentBet() {

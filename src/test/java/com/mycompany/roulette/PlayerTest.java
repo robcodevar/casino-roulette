@@ -46,6 +46,58 @@ public class PlayerTest {
     }
 
     @Test
+    public void shouldCreateRowBet() {
+        Player player1 = new Player("Jhonn", 300);
+        RowBet bet = player1.createRowBet(1, 100);
+
+        assertEquals(100, bet.credits);
+        assertEquals(1, bet.getRow());
+    }
+
+    @Test
+    public void shouldCreateEvenBet() {
+        Player player1 = new Player("Jhonn", 300);
+        EvenBet bet = player1.createEvenBet(100);
+
+        assertEquals("Par", bet.getType());
+    }
+
+    @Test
+    public void shouldCreateOddBet() {
+        Player player1 = new Player("Jhonn", 300);
+        OddBet bet = player1.createOddBet(100);
+
+        assertEquals("Impar", bet.getType());
+    }
+
+    @Test
+    public void shouldCreateDozenBet() {
+        Player player1 = new Player("Jhonn", 300);
+        DozenBet bet = player1.createDozenBet(1, 100);
+
+        assertEquals(100, bet.credits);
+        assertEquals(1, bet.getDozenNumber());
+    }
+
+    @Test
+    public void shouldCreateSingleNumberBet() {
+        Player player1 = new Player("Jhonn", 300);
+        SingleNumberBet bet = player1.createSingleNumberBet(1, 100);
+
+        assertEquals(100, bet.credits);
+        assertEquals(1, bet.getNumberBet());
+    }
+
+    @Test
+    public void shouldCreateMiddleBet() {
+        Player player1 = new Player("Jhonn", 300);
+        MiddleBet bet = player1.createMiddleBet(1, 100);
+
+        assertEquals(100, bet.credits);
+        assertEquals(1, bet.middleNumber);
+    }
+
+    @Test
     public void shouldAddCredits() {
         Player player1 = new Player("Jhonn", 100);
         player1.addCredits(50);
