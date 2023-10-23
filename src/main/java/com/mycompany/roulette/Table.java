@@ -13,6 +13,7 @@ import java.util.ArrayList;
  * @version 1.0
  */
 public class Table {
+
     public ArrayList<Player> players;
     public Cruppier cruppier;
     private Roulette roulette;
@@ -21,8 +22,10 @@ public class Table {
 
     private javax.swing.JLabel colorMostFrecuentLabel;
     private javax.swing.JLabel numberMostFrecuentLabel;
+    private javax.swing.JLabel playerMoreEarnigsLabel;
+    private javax.swing.JLabel playerLessEarnigsLabel;
 
-    public Table(javax.swing.JLabel colorMostFrecuentLabel, javax.swing.JLabel numberMostFrecuentLabel) {
+    public Table(javax.swing.JLabel colorMostFrecuentLabel, javax.swing.JLabel numberMostFrecuentLabel, javax.swing.JLabel playerMoreEarnigsLabel, javax.swing.JLabel playerLessEarnigsLabel) {
         players = new ArrayList<Player>();
         cruppier = new Cruppier();
         roulette = new Roulette();
@@ -31,6 +34,8 @@ public class Table {
 
         this.colorMostFrecuentLabel = colorMostFrecuentLabel;
         this.numberMostFrecuentLabel = numberMostFrecuentLabel;
+        this.playerMoreEarnigsLabel = playerMoreEarnigsLabel;
+        this.playerLessEarnigsLabel = playerLessEarnigsLabel;
     }
 
     public void addPlayer(String name, float credits) {
@@ -58,12 +63,15 @@ public class Table {
         cruppier.handleRoulleteResult(result, players);
         // 4. El crupier paga a los ganadores
         cruppier.payBets(players);
+        stadistics.addBets(getBets(players));
         updateStadistics();
     }
 
     public void updateStadistics() {
         colorMostFrecuentLabel.setText("COLOR MAS FRECUENTE: " + stadistics.getMostFrecuentColor());
         numberMostFrecuentLabel.setText("NUMERO MAS FRECUENTE: " + stadistics.getMostFrecuentNumber());
+        playerMoreEarnigsLabel.setText("JUGADOR CON MAS GANANCIAS: " + getPlayerNameById(stadistics.getPlayerWithMoreEarnigs()));
+        playerLessEarnigsLabel.setText("JUGADOR CON MENOS GANANCIAS: " + getPlayerNameById(stadistics.getPlayerWithLessEarnigs()));
     }
 
     public Player endGameTurn() {
@@ -76,6 +84,25 @@ public class Table {
             return null;
         }
 
+    }
+
+    private ArrayList<Bet> getBets(ArrayList<Player> players) {
+        ArrayList<Bet> bets = new ArrayList<>();
+        for (Player player : players) {
+            bets.add(player.getCurrentBet());
+        }
+
+        return bets;
+    }
+
+    public String getPlayerNameById(String id) {
+        for (Player player : players) {
+            if (player.getId().equals(id)) {
+                return player.name;
+            }
+        }
+
+        return null;
     }
 
     public int getCurrentTurn() {
