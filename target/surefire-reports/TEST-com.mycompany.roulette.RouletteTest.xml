@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.mycompany.roulette.RouletteTest" time="0" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.mycompany.roulette.RouletteTest" time="0.001" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="19"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,9 +15,8 @@
     <property name="user.country" value="BO"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-19\bin"/>
-    <property name="sun.java.command" value="C:\Users\Fernando\AppData\Local\Temp\surefire10240451936321527765\surefirebooter12073175869143025197.jar C:\Users\Fernando\AppData\Local\Temp\surefire10240451936321527765 2023-10-23T09-35-31_847-jvmRun1 surefire10224545264920370289tmp surefire_0913587802310485432tmp"/>
+    <property name="sun.java.command" value="C:\Users\Fernando\AppData\Local\Temp\surefire995341151168895085\surefirebooter5382589195648681756.jar C:\Users\Fernando\AppData\Local\Temp\surefire995341151168895085 2023-10-23T10-07-29_168-jvmRun1 surefire8867653754394292708tmp surefire_012633848930791376310tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="com.mycompany.roulette.**.*Test"/>
     <property name="surefire.test.class.path" value="D:\UMSS\Arquitectura de Software\casino-roulette\target\test-classes;D:\UMSS\Arquitectura de Software\casino-roulette\target\classes;C:\Users\Fernando\.m2\repository\org\netbeans\external\AbsoluteLayout\RELEASE160\AbsoluteLayout-RELEASE160.jar;C:\Users\Fernando\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\Fernando\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Fernando\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Fernando\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\Fernando\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\Fernando\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\Fernando\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Fernando"/>
@@ -31,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Fernando\AppData\Local\Temp\surefire10240451936321527765\surefirebooter12073175869143025197.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Fernando\AppData\Local\Temp\surefire995341151168895085\surefirebooter5382589195648681756.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="19.0.2+7-44"/>
@@ -61,6 +60,6 @@
     <property name="java.class.version" value="63.0"/>
   </properties>
   <testcase name="shouldRemoveCredits" classname="com.mycompany.roulette.RouletteTest" time="0"/>
-  <testcase name="shouldCreateColorRedBet" classname="com.mycompany.roulette.RouletteTest" time="0"/>
+  <testcase name="shouldCreateColorRedBet" classname="com.mycompany.roulette.RouletteTest" time="0.001"/>
   <testcase name="shouldAddCredits" classname="com.mycompany.roulette.RouletteTest" time="0"/>
 </testsuite>

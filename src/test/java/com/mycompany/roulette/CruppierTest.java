@@ -18,29 +18,29 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class CruppierTest {
     Cruppier cruppier;
-    
+
     public CruppierTest() {
         cruppier = new Cruppier();
     }
-    
+
     @BeforeAll
     public static void setUpClass() {
     }
-    
+
     @AfterAll
     public static void tearDownClass() {
     }
-    
+
     @BeforeEach
     public void setUp() {
         cruppier = new Cruppier();
     }
-    
+
     @AfterEach
     public void tearDown() {
     }
 
-        @Test
+    @Test
     public void shouldDeletePlayersWithNocredits() {
         ArrayList<Player> players = new ArrayList<>();
 
@@ -108,5 +108,5 @@ public class CruppierTest {
         assertEquals(1, players.size());
         assertEquals("Dave", players.get(0).name);
     }
-    
+
 }

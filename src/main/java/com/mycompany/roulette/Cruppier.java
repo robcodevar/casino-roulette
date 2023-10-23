@@ -43,6 +43,8 @@ public class Cruppier {
             Bet bet = player.getCurrentBet();
             this.casinoCredits += bet.credits;
         }
+
+        verifyBets(players);
     }
 
     public void verifyBets(ArrayList<Player> players) {
@@ -63,7 +65,9 @@ public class Cruppier {
 
             if (!message.isEmpty()) {
                 System.out.println(message);
+                JOptionPane.showMessageDialog(null, message, "Apuesta invalida", JOptionPane.INFORMATION_MESSAGE);
             }
+
         }
 
         players.removeIf(player -> player.getCurrentBet().credits <= 0
@@ -92,6 +96,9 @@ public class Cruppier {
             if (player.getCredits() <= 0) {
                 players.remove(i);
                 System.out.println("El jugador " + player.name + " se quedo sin creditos y fue sacado del casino");
+                JOptionPane.showMessageDialog(null,
+                        "El jugador " + player.name + " se quedo sin creditos y fue sacado del casino",
+                        "Jugador eliminado", JOptionPane.INFORMATION_MESSAGE);
             }
         }
     }
@@ -116,8 +123,8 @@ public class Cruppier {
 
         }
 
-        JOptionPane.showMessageDialog(null, message, "Resultado de la ruleta",
-                JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, message, "Resultado de la ruleta", JOptionPane.INFORMATION_MESSAGE);
+        removePlayersWithNoCredits(players);
 
     }
 
