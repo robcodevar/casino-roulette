@@ -8,9 +8,16 @@ import com.mycompany.roulette.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 import javax.print.attribute.AttributeSet;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -295,11 +302,37 @@ public class Mesa extends javax.swing.JFrame {
         jLabel6.setText("x : " + x + " y: " + y);
     }// GEN-LAST:event_jLabel1MouseMoved
 
-    private void btnStartGameMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnStartGameMouseClicked
+    private void btnStartGameMouseClicked(java.awt.event.MouseEvent evt) throws UnsupportedAudioFileException {// GEN-FIRST:event_btnStartGameMouseClicked
         siguienteTurno();
 
         btnStartGame.setVisible(false);
         btnAddPlayer.setVisible(false);
+        //try- catch insercion de music
+        // Intenta cargar y reproducir un archivo de audio
+        try {
+            // Especifica la ruta completa del archivo de audio (asegúrate de que sea un archivo de audio válido)
+            File archivoAudio = new File("C:\\Users\\bobvo\\OneDrive\\Documentos\\NetBeansProjects\\Roulette\\src\\main\\resources\\music\\take-five.mp3");
+
+            // Verifica si el archivo existe
+            if (archivoAudio.exists()) {
+                // Crea un flujo de audio
+                AudioInputStream flujoAudio = AudioSystem.getAudioInputStream(archivoAudio);
+            
+                // Crea un Clip
+                Clip clip = AudioSystem.getClip();
+
+                // Reproduce el Clip
+                clip.open(flujoAudio);
+                clip.start();
+            
+                // Pone el Clip en loop
+                clip.loop(Clip.LOOP_CONTINUOUSLY);
+            } else {
+                System.err.println("El archivo de audio no existe.");
+            }
+        } catch (IOException | LineUnavailableException | UnsupportedAudioFileException ex) {
+            ex.printStackTrace();
+        }
     }// GEN-LAST:event_btnStartGameMouseClicked
 
     private void siguienteTurno() {
