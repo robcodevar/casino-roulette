@@ -87,6 +87,14 @@ public class Player {
         return newBet;
     }
 
+    public MiddleBet createMiddleBet(int middleNumber, float credits) {
+        MiddleBet newBet = new MiddleBet(credits, this, middleNumber);
+        this.currentBet = newBet;
+        removeCredits(credits);
+
+        return newBet;
+    }
+
     public Bet getCurrentBet() {
         return currentBet;
     }

@@ -766,10 +766,10 @@ public class BetHandler {
                 player.createEvenBet(credits);
                 break;
             case "betOneTo18":
-                // TODO: Implementar
+                player.createMiddleBet(1, credits);
                 break;
             case "bet19To36":
-                // TODO: Implementar
+                player.createMiddleBet(2, credits);
                 break;
             case "betBlack":
                 player.createColorBet(ColorsBet.BLACK, credits);
