@@ -28,4 +28,9 @@ public class EvenBet extends Bet {
     private boolean isEven(int number) {
         return number % 2 == 0;
     }
+
+    @Override
+    public String getType() {
+        return "Par";
+    }
 }

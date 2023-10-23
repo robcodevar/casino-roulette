@@ -30,4 +30,9 @@ public class SingleNumberBet extends Bet {
 
         return false;
     }
+
+    @Override
+    public String getType() {
+        return "Numero " + this.numberBet;
+    }
 }

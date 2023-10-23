@@ -1,1 +1,9 @@
 com\mycompany\roulette\ColorBetTest.class
+com\mycompany\roulette\EvenBetTest.class
+com\mycompany\roulette\OddBetTest.class
+com\mycompany\roulette\DozenBetTest.class
+com\mycompany\roulette\SingleNumberBetTest.class
+com\mycompany\roulette\CruppierTest.class
+com\mycompany\roulette\RowBetTest.class
+com\mycompany\roulette\PlayerTest.class
+com\mycompany\roulette\RouletteTest.class

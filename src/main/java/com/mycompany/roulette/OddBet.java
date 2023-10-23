@@ -28,4 +28,9 @@ public class OddBet extends Bet {
     private boolean isOdd(int number) {
         return number % 2 != 0;
     }
+
+    @Override
+    public String getType() {
+        return "Impar";
+    }
 }

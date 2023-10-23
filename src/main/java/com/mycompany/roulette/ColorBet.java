@@ -26,4 +26,15 @@ public class ColorBet extends Bet {
 
         return false;
     }
+
+    @Override
+    public String getType() {
+        if (this.colorBet == ColorsBet.BLACK) {
+            return "Color Black";
+        } else if (this.colorBet == ColorsBet.RED) {
+            return "Color Red";
+        }
+
+        return "";
+    }
 }

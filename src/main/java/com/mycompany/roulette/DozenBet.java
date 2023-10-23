@@ -41,4 +41,17 @@ public class DozenBet extends Bet {
 
         return false;
     }
+
+    @Override
+    public String getType() {
+        if (this.dozenNumber == 1) {
+            return "Docena 1";
+        } else if (this.dozenNumber == 2) {
+            return "Docena 2";
+        } else if (this.dozenNumber == 3) {
+            return "Docena 3";
+        }
+
+        return "";
+    }
 }

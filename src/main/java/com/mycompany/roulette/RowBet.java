@@ -30,4 +30,9 @@ public class RowBet extends Bet {
 
         return false;
     }
+
+    @Override
+    public String getType() {
+        return "Fila " + this.row;
+    }
 }

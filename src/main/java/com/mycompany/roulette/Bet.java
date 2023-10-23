@@ -39,4 +39,8 @@ public abstract class Bet {
     public boolean isWinner(Slot slot) {
         return false;
     }
+
+    public String getType() {
+        return "";
+    }
 }
