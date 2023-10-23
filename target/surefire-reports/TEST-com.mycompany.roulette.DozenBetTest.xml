@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.mycompany.roulette.DozenBetTest" time="0" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.mycompany.roulette.DozenBetTest" time="0.001" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="19"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="BO"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-19\bin"/>
-    <property name="sun.java.command" value="C:\Users\Fernando\AppData\Local\Temp\surefire3142725996916643287\surefirebooter8493906451861744392.jar C:\Users\Fernando\AppData\Local\Temp\surefire3142725996916643287 2023-10-23T00-39-41_874-jvmRun1 surefire4607069216013779244tmp surefire_05115973832335535426tmp"/>
+    <property name="sun.java.command" value="C:\Users\Fernando\AppData\Local\Temp\surefire4500197312157209545\surefirebooter8525907015977252991.jar C:\Users\Fernando\AppData\Local\Temp\surefire4500197312157209545 2023-10-23T00-57-43_399-jvmRun1 surefire10692284948211419403tmp surefire_01951068328210495714tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="D:\UMSS\Arquitectura de Software\casino-roulette\target\test-classes;D:\UMSS\Arquitectura de Software\casino-roulette\target\classes;C:\Users\Fernando\.m2\repository\org\netbeans\external\AbsoluteLayout\RELEASE160\AbsoluteLayout-RELEASE160.jar;C:\Users\Fernando\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\Fernando\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Fernando\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Fernando\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\Fernando\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\Fernando\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\Fernando\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Fernando\AppData\Local\Temp\surefire3142725996916643287\surefirebooter8493906451861744392.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Fernando\AppData\Local\Temp\surefire4500197312157209545\surefirebooter8525907015977252991.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="19.0.2+7-44"/>

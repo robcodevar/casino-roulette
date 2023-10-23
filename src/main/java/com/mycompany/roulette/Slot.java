@@ -43,6 +43,23 @@ public class Slot {
 
     @Override
     public String toString() {
-        return "Slot: " + color + " " + numberTag + " " + row;
+        // return "Campo: " + color + " " + numberTag + " " + row;
+        String res = "";
+
+        if (numberTag == 0) {
+            res = "Cero";
+        } else {
+            res += "El resultado es: " + numberTag + " ";
+
+            if (this.color == ColorsBet.BLACK) {
+                res += "Negro ";
+            } else {
+                res += "Rojo ";
+            }
+
+            res += "en la fila " + this.row;
+        }
+
+        return res;
     }
 }

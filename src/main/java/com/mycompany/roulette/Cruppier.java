@@ -6,6 +6,8 @@ package com.mycompany.roulette;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 /**
  * Write a description of class Cruppier here.
  *
@@ -71,6 +73,9 @@ public class Cruppier {
 
     public void handleRoulleteResult(Slot slot, ArrayList<Player> players) {
         System.out.println("El resultado de la ruleta es: " + slot.toString());
+        JOptionPane.showMessageDialog(null, "El resultado de la ruleta es: " + slot.toString(),
+                "Resultado de la ruleta",
+                JOptionPane.INFORMATION_MESSAGE);
 
         // Update Player bet if is winner
         for (int i = 0; i < players.size(); i++) {
@@ -92,6 +97,7 @@ public class Cruppier {
     }
 
     public void payBets(ArrayList<Player> players) {
+        String message = "";
         for (int i = 0; i < players.size(); i++) {
             Player player = players.get(i);
             Bet bet = player.getCurrentBet();
@@ -101,11 +107,17 @@ public class Cruppier {
                 float playerCredits = calcEarningsByBet(bet);
                 player.addCredits(playerCredits);
                 casinoCredits -= playerCredits;
-                System.out.println("El jugador " + player.name + " gano " + playerCredits + " creditos");
+
+                message += "El jugador " + player.name + " gano " + playerCredits + " creditos\n";
             } else {
-                System.out.println("El jugador " + player.name + " perdio " + bet.credits + " creditos");
+                message += "El jugador " + player.name + " perdio " + bet.credits + " creditos\n";
+
             }
+
         }
+
+        JOptionPane.showMessageDialog(null, message, "Resultado de la ruleta",
+                JOptionPane.INFORMATION_MESSAGE);
 
     }
 
