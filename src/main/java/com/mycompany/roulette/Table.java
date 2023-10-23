@@ -17,12 +17,20 @@ public class Table {
     public Cruppier cruppier;
     private Roulette roulette;
     private int currentTurn;
+    public Stadistics stadistics;
 
-    public Table() {
+    private javax.swing.JLabel colorMostFrecuentLabel;
+    private javax.swing.JLabel numberMostFrecuentLabel;
+
+    public Table(javax.swing.JLabel colorMostFrecuentLabel, javax.swing.JLabel numberMostFrecuentLabel) {
         players = new ArrayList<Player>();
         cruppier = new Cruppier();
         roulette = new Roulette();
+        stadistics = new Stadistics();
         currentTurn = -1;
+
+        this.colorMostFrecuentLabel = colorMostFrecuentLabel;
+        this.numberMostFrecuentLabel = numberMostFrecuentLabel;
     }
 
     public void addPlayer(String name, float credits) {
@@ -45,10 +53,17 @@ public class Table {
         cruppier.receiveBets(players);
         // 2. El crupier gira la ruleta
         Slot result = roulette.spin();
+        stadistics.addResult(result);
         // 3. El crupier anuncia el resultado
         cruppier.handleRoulleteResult(result, players);
         // 4. El crupier paga a los ganadores
         cruppier.payBets(players);
+        updateStadistics();
+    }
+
+    public void updateStadistics() {
+        colorMostFrecuentLabel.setText("COLOR MAS FRECUENTE: " + stadistics.getMostFrecuentColor());
+        numberMostFrecuentLabel.setText("NUMERO MAS FRECUENTE: " + stadistics.getMostFrecuentNumber());
     }
 
     public Player endGameTurn() {
@@ -60,15 +75,6 @@ public class Table {
             return null;
         }
 
-    }
-
-    public String getStadistics() {
-        // TODO: implement this method
-        return "";
-    }
-
-    public void addRoundBets(ArrayList<Bet> bets) {
-        // TODO: implement this method
     }
 
     public int getCurrentTurn() {

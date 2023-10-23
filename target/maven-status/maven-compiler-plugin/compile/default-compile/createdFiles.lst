@@ -1,4 +1,5 @@
 com\mycompany\roulette\Slot.class
+com\mycompany\roulette\Stadistics.class
 com\mycompany\roulette\ColorBet.class
 com\mycompany\roulette\SingleNumberBet.class
 com\mycompany\GUI\Mesa$2.class
