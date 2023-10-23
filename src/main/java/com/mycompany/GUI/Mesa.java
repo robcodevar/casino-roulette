@@ -97,11 +97,10 @@ private DefaultTableModel table;
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("COLOR MAS FRECUENTE: ");
 
-        tablePlayer.setAutoCreateColumnsFromModel(false);
         tablePlayer.setAutoCreateRowSorter(true);
         tablePlayer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null}
+
             },
             new String [] {
                 "Nombre", "Creditos", "Apuesta(s)"
